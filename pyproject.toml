@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "resources_api"
+version = "1.0.0"
+description = "A tool to manage resources"
+authors = []
+repository = "https://github.com/CaJIbHuK/resources-api"
+keywords = []
+exclude = ["tests", "*.tests"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^2.2"
+djangorestframework = "^3.10"
+pyyaml = "^5.1"
+psycopg2-binary = "^2.8"
+djangorestframework-simplejwt = "^4.3"
+django-filter = "^2.2"
+drf-yasg = "^1.17"
+
+[tool.poetry.dev-dependencies]
+toml = "^0.10.0"
+isort = "^4.3"
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+lines_after_imports = 2
+force_grid_wrap = 3
+forced_separate = ["resources_api"]
+add_imports = "from __future__ import annotations"
