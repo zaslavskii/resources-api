@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:11
+    ports:
+      - 5432:5432
+
+  resources:
+    build:
+      context: .
+    environment:
+      - DB_HOST=postgres
+      - DEBUG=true
+    ports:
+      - 8000:8000
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - postgres
