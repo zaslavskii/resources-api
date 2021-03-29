@@ -15,4 +15,4 @@ jobs:
     - name: Test with pytest
       run: |
         docker-compose up -d
-        docker-compose run resources sh ./src/manage.py test ./src
+        docker-compose run resources sh -c './src/manage.py test ./src'
