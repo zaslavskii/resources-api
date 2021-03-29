@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install virtualenv \
-        && virtualenv --python=python3 .venv
+        && virtualenv --python=python3 .venv \
         && . /venv/bin/activate \
         && set -o pipefail \
         && curl -sSL https://raw.githubusercontent.com/sdispater/poetry/${POETRY_VERSION}/get-poetry.py > get-poetry.py \
