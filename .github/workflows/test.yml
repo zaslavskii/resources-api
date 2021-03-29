@@ -21,7 +21,7 @@ jobs:
         pip install virtualenv \
         && virtualenv --python=python3 .venv \
         && set -o pipefail \
-        && curl -sSL https://raw.githubusercontent.com/sdispater/poetry/${POETRY_VERSION}/get-poetry.py > get-poetry.py \
+        && curl -sSL https://raw.githubusercontent.com/sdispater/poetry/0.12.16/get-poetry.py > get-poetry.py \
         && python get-poetry.py --version 0.12.16 -y \
         && . ${HOME}/.poetry/env \
         && . ./.venv/bin/activate \
