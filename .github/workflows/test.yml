@@ -28,4 +28,5 @@ jobs:
         && poetry install
     - name: Test with pytest
       run: |
+        . ./.venv/bin/activate \
         ./src/manage.py test ./src
