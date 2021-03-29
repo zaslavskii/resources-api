@@ -17,7 +17,10 @@ jobs:
         docker-compose up -d
         docker-compose run resources sh -c './src/manage.py test ./src'
     - name: Publish
+      env:
+        DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       run: |
-        echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
         docker tag resources-api_resources cajibhuk/resources-api:${GITHUB_SHA}
         docker push cajibhuk/resources-api:${GITHUB_SHA}
